@@ -23,14 +23,12 @@
                 android:cropToPadding="false"
                 android:scaleType="centerCrop" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_spacer_height" />
-
             <TextView
+                android:id="@+id/also_known_label_tv"
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/DetailActivityTextViewStyle"
+                android:paddingTop="@dimen/activity_top_padding"
                 android:text="@string/detail_also_known_as_label"
                 android:textStyle="bold" />
 
@@ -40,14 +38,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_spacer_height" />
-
             <TextView
                 style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_top_padding"
                 android:text="@string/detail_description_label"
                 android:textStyle="bold" />
 
@@ -58,14 +53,11 @@
                 android:layout_height="wrap_content"
                 tools:text="Sample Description" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_spacer_height" />
-
             <TextView
                 style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_top_padding"
                 android:text="@string/detail_ingredients_label"
                 android:textStyle="bold" />
 
@@ -76,14 +68,12 @@
                 android:layout_height="wrap_content"
                 tools:text="Sample Ingredients" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_spacer_height" />
-
             <TextView
+                android:id="@+id/origin_label_tv"
                 style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_top_padding"
                 android:text="@string/detail_place_of_origin_label"
                 android:textStyle="bold" />
 

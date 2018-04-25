@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,9 +22,11 @@ public class DetailActivity extends AppCompatActivity {
 
     private ImageView mImageIv;
     private TextView mAlsoKnownAsTv;
+    private TextView mAlsoKnownAsLabelTv;
     private TextView mDescriptionTv;
     private TextView mIngredientsTv;
     private TextView mPlaceOfOriginTv;
+    private TextView mPlaceOfOriginLabelTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,16 +72,23 @@ public class DetailActivity extends AppCompatActivity {
     private void initializeViewReferences() {
         mImageIv = findViewById(R.id.image_iv);
         mAlsoKnownAsTv = findViewById(R.id.also_known_tv);
+        mAlsoKnownAsLabelTv = findViewById(R.id.also_known_label_tv);
         mDescriptionTv = findViewById(R.id.description_tv);
         mIngredientsTv = findViewById(R.id.ingredients_tv);
         mPlaceOfOriginTv = findViewById(R.id.origin_tv);
+        mPlaceOfOriginLabelTv = findViewById(R.id.origin_label_tv);
     }
 
     private void populateUI(Sandwich sandwich) {
         mAlsoKnownAsTv.setText(joinListWithNewlineSeparator(sandwich.getAlsoKnownAs()));
+        setVisibility(mAlsoKnownAsTv.getText(), mAlsoKnownAsTv, mAlsoKnownAsLabelTv);
+
         mDescriptionTv.setText(defaultString(sandwich.getDescription()));
+
         mIngredientsTv.setText(joinListWithNewlineSeparator(sandwich.getIngredients()));
+
         mPlaceOfOriginTv.setText(defaultString(sandwich.getPlaceOfOrigin()));
+        setVisibility(mPlaceOfOriginTv.getText(), mPlaceOfOriginTv, mPlaceOfOriginLabelTv);
     }
 
     private String joinListWithNewlineSeparator(List<String> listOfStrings) {
@@ -89,5 +99,12 @@ public class DetailActivity extends AppCompatActivity {
 
     private String defaultString(String original) {
         return TextUtils.isEmpty(original) ? "" : original;
+    }
+
+    private void setVisibility(CharSequence testString, View... views) {
+        if (TextUtils.isEmpty(testString))
+            for (View view : views) view.setVisibility(View.GONE);
+        else
+            for (View view : views) view.setVisibility(View.VISIBLE);
     }
 }
