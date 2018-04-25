@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginRight="@dimen/activity_horizontal_margin"
-    android:layout_marginStart="@dimen/activity_horizontal_margin"
-    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:layout_marginBottom="@dimen/activity_vertical_margin"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
     <ScrollView
@@ -26,6 +20,7 @@
                 android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/sandwich_picture_content_description"
+                android:cropToPadding="false"
                 android:scaleType="centerCrop" />
 
             <View
@@ -35,11 +30,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/DetailActivityTextViewStyle"
                 android:text="@string/detail_also_known_as_label"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/also_known_tv"
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -48,6 +45,7 @@
                 android:layout_height="@dimen/activity_spacer_height" />
 
             <TextView
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_description_label"
@@ -55,6 +53,7 @@
 
             <TextView
                 android:id="@+id/description_tv"
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Sample Description" />
@@ -64,6 +63,7 @@
                 android:layout_height="@dimen/activity_spacer_height" />
 
             <TextView
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_ingredients_label"
@@ -71,6 +71,7 @@
 
             <TextView
                 android:id="@+id/ingredients_tv"
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Sample Ingredients" />
@@ -80,6 +81,7 @@
                 android:layout_height="@dimen/activity_spacer_height" />
 
             <TextView
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_place_of_origin_label"
@@ -87,6 +89,7 @@
 
             <TextView
                 android:id="@+id/origin_tv"
+                style="@style/DetailActivityTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

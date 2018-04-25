@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Style for the activity textViews that are indented in a bit so that they are not flushed against the edge-->
+    <!-- Adapted from Lesson 12 of the challenge course -->
+    <style name="DetailActivityTextViewStyle">
+        <item name="android:paddingRight">@dimen/activity_horizontal_padding</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_padding</item>
+    </style>
+
 </resources>
